@@ -25,6 +25,10 @@ window.onscroll = () => {
 				links.classList.remove('active');
 				document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
 			})
+			sec.classList.add('show-animate')
+		} 
+		else {
+			sec.classList.remove('show-animate')
 		}
 
 	});
@@ -32,4 +36,28 @@ window.onscroll = () => {
 	let header = document.querySelector('header');
 
 	header.classList.toggle('sticky', window.scrollY > 100)
+
+	// borrar todo la hacer click
+
+	menuIcon.classList.remove('bx-x');
+	navbar.classList.remove('active');
+}
+
+function descargarArchivo() {
+    const enlace = document.createElement('a');
+    enlace.href = './Extras/my_cv.pdf'; // Reemplaza con el nombre de tu archivo
+    enlace.download = './Extras/my_cv.pdf'; // Reemplaza con el nombre de tu archivo
+    enlace.click();
+}
+
+function sendEmail() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var phone = document.getElementById("phone").value;
+    var topic = document.getElementById("topic").value;
+
+    var emailBody = `Nombre: ${name}\nCorreo Electrónico: ${email}\nTelefono: ${phone}\nAsunto: ${topic}\nMensaje: ${message}`;
+    console.log(emailBody)
+    window.location.href = `mailto:astroreal031@gmail.com?subject=${topic}&body=${encodeURIComponent(emailBody)}`;
 }
