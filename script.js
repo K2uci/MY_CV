@@ -45,8 +45,8 @@ window.onscroll = () => {
 
 function descargarArchivo() {
     const enlace = document.createElement('a');
-    enlace.href = './my_cv.pdf'; // Reemplaza con el nombre de tu archivo
-    enlace.download = './my_cv.pdf'; // Reemplaza con el nombre de tu archivo
+    enlace.href = './cv.docx'; // Reemplaza con el nombre de tu archivo
+    enlace.download = './cv.docx'; // Reemplaza con el nombre de tu archivo
     enlace.click();
 }
 
