@@ -11,11 +11,13 @@
     scroll-behavior: smooth;
 }
 
+/* CAMBIO PRINCIPAL: PALETA DE COLORES ROJO TEAM */
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
+    --bg-color: #0a0a0f;
+    --second-bg-color: #1a0f0f;
+    --text-color: #f0f0f0;
+    --main-color: #ff2e2e; /* Rojo pentester */
+    --accent-color: #ff5252;
 }
 
 html {
@@ -26,6 +28,12 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+}
+
+/* Destacar palabras clave en el texto */
+strong {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .header {
@@ -44,6 +52,7 @@ body {
 
 .header.sticky {
     background: var(--bg-color);
+    border-bottom: 1px solid var(--main-color);
 }
 
 .logo {
@@ -68,6 +77,7 @@ body {
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+    text-shadow: 0 0 10px rgba(255, 46, 46, 0.5);
 }
 
 #menu-icon {
@@ -87,6 +97,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
+    background: linear-gradient(to right, var(--bg-color) 70%, rgba(255, 46, 46, 0.05));
 }
 
 .home-content {
@@ -103,7 +114,7 @@ section {
 }
 
 .home-content h1 span {
-    color: var(--text-color);
+    color: var(--main-color);
 }
 
 .home-content .text-animate {
@@ -116,7 +127,7 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
-    background-image: linear-gradient(var(--main-color),var(--main-color));
+    background-image: linear-gradient(var(--main-color),var(--accent-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem  0;
@@ -142,6 +153,7 @@ section {
     display:inline-table;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
+    line-height: 1.8;
 }
 
 .btn-box {
@@ -173,6 +185,7 @@ section {
 
 .btn-box .btn:hover {
     color: var(--main-color);
+    box-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
 }
 
 .btn-box .btn:nth-child(2) {
@@ -181,7 +194,7 @@ section {
 }
 
 .btn-box .btn:nth-child(2):hover {
-    color: var(--bg-color );
+    color: var(--bg-color);
 }
 
 .btn-box .btn:nth-child(2)::before {
@@ -231,6 +244,8 @@ section {
 
 .home-sci a:hover {
     color: var(--bg-color);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
 }
 
 .home-sci a::before{
@@ -257,10 +272,11 @@ section {
     height: 100%;
     background: transparent;
     transition: 3s; 
+    background: linear-gradient(to left, rgba(255, 46, 46, 0.1), transparent);
 }  
 
 .home-imgHover:hover{
-    background: var(--bg-color);
+    background: rgba(26, 15, 15, 0.8);
     opacity: .8;
 }
 
@@ -320,23 +336,27 @@ span {
 
 .about-content {
     text-align: center;
+    max-width: 80rem;
 }
 
 .about-content h3 {
     position: relative;
     display: inline-block;
     font-size: 2.6rem;
+    margin-bottom: 2rem;
 }
 
 .about-content p {
     font-size: 1.6rem;
     position: relative;
     margin: 2rem 0 3rem;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 .btn-box.btns {
     display: inline-block;
-    width: 15rem;
+    width: 20rem;
 }
 
 .btn-box.btns a::before {
@@ -397,6 +417,13 @@ span {
     border: .2rem solid var(--main-color);
     border-radius: .6rem;
     margin-bottom: 2rem ;
+    background: rgba(26, 15, 15, 0.3);
+    transition: .3s;
+}
+
+.education-content .content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 46, 46, 0.1);
 }
 
 .education-content .content::before {
@@ -419,6 +446,7 @@ span {
     font-size: 1.5rem;
     color: var(--main-color);
     padding-bottom: .5rem;
+    font-weight: 600;
 }
 
 .education-content .content .year i {
@@ -427,11 +455,14 @@ span {
 
 .education-content .content h3 {
     font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
 }
 
 .education-content .content p {
     font-size: 1.6rem;
     padding-top: .5rem;
+    line-height: 1.6;
 }
 
 .skills {
@@ -474,6 +505,7 @@ span {
     padding: .5rem 1.5rem;
     z-index: 1;
     overflow: hidden;
+    background: rgba(10, 10, 15, 0.3);
 }
 
 .skills-box .skills-content::before {
@@ -504,6 +536,7 @@ span {
 
 .skills-content .progress h3 span {
     color: var(--text-color);
+    font-weight: 600;
 }
 
 .skills-content .progress .bar {
@@ -512,6 +545,7 @@ span {
     border: .2rem solid var(--main-color);
     padding: .5rem;
     margin: 1rem 0;
+    background: rgba(255, 46, 46, 0.1);
 }
 
 .skills-content .progress .bar span {
@@ -519,20 +553,20 @@ span {
     height: 100%;
     border-radius: .3rem;
     background: var(--main-color);
+    box-shadow: 0 0 10px rgba(255, 46, 46, 0.5);
 }
 
-/*Porciento de las habilidades*/
-
+/* Ajustes de porcentajes para habilidades de pentesting */
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 90%;
+    width: 95%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 85%;
+    width: 90%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 60%;
+    width: 85%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
@@ -540,19 +574,19 @@ span {
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 60%;
+    width: 95%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-    width: 80%;
+    width: 90%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 50%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-    width: 30%;
+    width: 95%;
 }
 
 .contact {
@@ -591,15 +625,22 @@ span {
     height: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
-    color: var(--tex-color);
-    background: transparent;
+    color: var(--text-color);
+    background: rgba(26, 15, 15, 0.3);
     border-radius: .6rem;
     border: .2rem solid var(--main-color);
+    transition: .3s;
 } 
+
+.contact form .input-box .input-field input:focus,
+.contact form .textarea-field textarea:focus {
+    box-shadow: 0 0 10px rgba(255, 46, 46, 0.3);
+}
 
 .contact form .input-box .input-field input::placeholder,
 .contact form .textarea-field textarea::placeholder {
     color: var(--text-color);
+    opacity: 0.7;
 }
 
 .contact form .focus {
@@ -608,7 +649,7 @@ span {
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--second-color);
+    background: var(--second-bg-color);
     border-radius: .6rem;
     z-index: -1;
     transition: .5s
@@ -642,10 +683,13 @@ span {
     flex-wrap: wrap;
     padding: 2rem 9%;
     background-color: var(--second-bg-color);
+    border-top: 1px solid rgba(255, 46, 46, 0.2);
 }
 
 .footer-text p {
     font-size: 1.6rem;
+    text-align: center;
+    opacity: 0.8;
 }
 
 .footer-iconTop a {
@@ -659,6 +703,12 @@ span {
     border-radius: .6rem;
     z-index: 1;
     overflow: hidden;
+    transition: .3s;
+}
+
+.footer-iconTop a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
 }
 
 .footer-iconTop a::before {
@@ -688,7 +738,6 @@ span {
 }
 
 /* animatoir reload */
-
 .animate {
     position: absolute;
     top: 0;
@@ -735,7 +784,6 @@ section:nth-child(odd) .animate.scroll,
 }
 
 /*RESPONSIVE*/
-
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -848,7 +896,7 @@ section:nth-child(odd) .animate.scroll,
 }
 
 @media (max-width: 462px) {
-    .home-content {
+    .home-content h1 {
         font-size: 5.2rem;
     }
 
@@ -888,7 +936,6 @@ section:nth-child(odd) .animate.scroll,
 }
 
 /* KEYFRAMES */
-
 @keyframes homeBgText {
     0%,10%,100% {
         background-position: -33rem 0;
