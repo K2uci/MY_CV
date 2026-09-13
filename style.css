@@ -377,6 +377,8 @@ section {
 .home-content {
     max-width: 68rem;
     z-index: 99;
+    position: relative;
+    width: 100%;
 }
 
 .terminal-prompt {
@@ -432,6 +434,8 @@ section {
     line-height: 1.2;
     margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease 0.4s both;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .home-content h1 span:not(.glitch) {
@@ -592,9 +596,16 @@ section {
     font-family: var(--font-mono);
 }
 
+/* ============================================
+   BUTTONS
+   ============================================ */
 .btn-box {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
     animation: fadeInUp 0.8s ease 0.8s both;
 }
 
@@ -616,6 +627,9 @@ section {
     overflow: hidden;
     font-family: var(--font-mono);
     letter-spacing: 0.5px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 0;
 }
 
 .btn::before {
@@ -627,6 +641,7 @@ section {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
+    pointer-events: none;
 }
 
 .btn:hover::before {
@@ -640,6 +655,11 @@ section {
 
 .btn i {
     font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.btn span {
+    display: inline-block;
 }
 
 .btn-outline {
@@ -652,6 +672,18 @@ section {
     color: var(--bg-color);
 }
 
+.btn-box.btns {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    animation: none;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   HOME SOCIAL ICONS
+   ============================================ */
 .home-sci {
     position: absolute;
     bottom: 6rem;
@@ -659,6 +691,7 @@ section {
     display: flex;
     gap: 1.5rem;
     animation: fadeInUp 0.8s ease 1s both;
+    z-index: 10;
 }
 
 .home-sci a {
@@ -924,11 +957,6 @@ section {
 
 .status-available {
     color: var(--accent-green) !important;
-}
-
-.btn-box.btns {
-    display: inline-flex;
-    animation: none;
 }
 
 /* ============================================
@@ -1483,6 +1511,7 @@ section {
     display: block;
     width: 100%;
     animation: none;
+    margin-top: 0;
 }
 
 .contact-form .btn {
@@ -1610,6 +1639,7 @@ section {
 
     .home-sci {
         left: 4%;
+        bottom: 4rem;
     }
 
     .footer {
@@ -1659,8 +1689,17 @@ section {
         display: none;
     }
 
+    .home-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
     .home-content h1 {
         font-size: 4.2rem;
+    }
+
+    .btn-box {
+        width: 100%;
     }
 
     .home-stats {
@@ -1701,6 +1740,12 @@ section {
         font-size: 3.6rem;
     }
 
+    .home-sci {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 3rem;
+    }
+
     .home-stats {
         flex-direction: column;
         gap: 1.5rem;
@@ -1709,10 +1754,18 @@ section {
     .btn-box {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
     }
 
     .btn {
         justify-content: center;
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .btn-box.btns {
+        width: 100%;
     }
 
     .about-img {
